@@ -1,3 +1,5 @@
 package kfd
 
-fun displayName(name: String?): String = name ?: "Гость"
+fun displayName(name: String?): String {
+    return name ?: "Гость"
+}
