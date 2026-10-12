@@ -1,5 +1,6 @@
 package kfd
 
+import org.junit.jupiter.api.Assertions.assertFalse
 import org.junit.jupiter.api.Assertions.assertTrue
 import org.junit.jupiter.api.Test
 
@@ -11,6 +12,16 @@ class MessagePolicyTest {
 
     @Test
     fun acceptsNullMessage() {
-        assertTrue(canSendMessage(null))
+        assertFalse(canSendMessage(null))
+    }
+
+    @Test
+    fun rejectsEmptyMessage() {
+        assertFalse(canSendMessage(""))
+    }
+
+    @Test
+    fun acceptsMessageAtMaxLength() {
+        assertTrue(canSendMessage("a".repeat(140)))
     }
 }
