@@ -1,5 +1,8 @@
 package kfd
 
 fun displayName(name: String?): String {
-    return name ?: "Гость"
+    if (name == null || name.trim() == "")
+        return "Гость"
+    return name.trim()
 }
+
