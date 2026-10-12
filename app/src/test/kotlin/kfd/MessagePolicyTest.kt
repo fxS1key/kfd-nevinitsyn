@@ -8,4 +8,9 @@ class MessagePolicyTest {
     fun acceptsShortMessage() {
         assertTrue(canSendMessage("Привет"))
     }
+
+    @Test
+    fun acceptsNullMessage() {
+        assertTrue(canSendMessage(null))
+    }
 }
